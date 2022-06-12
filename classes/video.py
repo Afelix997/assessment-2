@@ -25,6 +25,7 @@ class Video:
 
         return videos
     def rent_video(self):
-        if self.copies_available == 0:
-            return ('No copies available')
         self.copies_available -= 1
+    def return_video(self):
+        self.copies_available += 1
+         
