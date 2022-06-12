@@ -24,8 +24,10 @@ class Video:
                 videos.append(Video(**dict(row)))
 
         return videos
+
     def rent_video(self):
         self.copies_available -= 1
+        
     def return_video(self):
         self.copies_available += 1
          

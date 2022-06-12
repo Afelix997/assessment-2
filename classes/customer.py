@@ -24,13 +24,12 @@ class Customer:
         customers = []
         my_path = os.path.abspath(os.path.dirname(__file__))
         path = os.path.join(my_path, "../data/customers.csv")
-
         with open(path) as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 customers.append(Customer(**dict(row)))
-
         return customers
+
     def max_rent(self):
         if self.account_type == 'sx' or self.account_type == 'sf': return 1
         elif self.account_type == 'px' or self.account_type == 'pf': return 3
@@ -47,6 +46,7 @@ class Customer:
             self.current_video_rentals.append(video.title)
             self.renting_amount += 1
             return f'Successfully rented {video.title}. Enjoy!'
+
     def new_return(self,video):
         if video.title in self.current_video_rentals:
             video.return_video()
