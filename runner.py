@@ -36,8 +36,9 @@ def menu(store_name):
             customer_id= input('\nEnter customer id: \n')
             x= next(( store.return_video(video,customer_id) for video in store.curr_inventory if video.title.lower() == video_to_rent.lower()), "\n-- We do not have any titles by that name, please recheck spelling.--")
             print(x)
-            
+
         elif mode == '6':
+            print("\n -- Good Bye! --\n")
             break
 
 menu(store)
